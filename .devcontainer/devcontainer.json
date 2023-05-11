@@ -1,0 +1,27 @@
+{
+    "name": "cgra-x-heep-dev",
+    "image": "01xz/cgra-x-heep:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "eamodio.gitlens",
+                "eirikpre.systemverilog",
+                "ms-vscode.cpptools"
+            ]
+        }
+    },
+    "mounts": [],
+    "runArgs": [
+        "-h",
+        "cgra-x-heep-dev",
+        "--name",
+        "cgra-x-heep-dev",
+        "-v",
+        "/etc/timezone:/etc/timezone:ro",
+        "-v",
+        "/etc/localtime:/etc/localtime:ro"
+    ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "echo \"source ${containerWorkspaceFolder}/.devcontainer/setup.sh\" >> /home/vscode/.bashrc"
+}
