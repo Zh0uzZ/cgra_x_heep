@@ -1,0 +1,3 @@
+[submodule "fusesoc-cores"]
+	path = fusesoc-cores
+	url = https://github.com/fusesoc/fusesoc-cores

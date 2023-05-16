@@ -77,7 +77,7 @@ INC_FOLDERS_GCC             = $(addprefix -I ,$(INC_FOLDERS))
 # We link with our custom crt0.s and syscalls.c against newlib so that we can
 # use the c standard library
 x_heep_applications/hello_world/hello_world.elf: x_heep_applications/hello_world/hello_world.c
-	$(RISCV_EXE_PREFIX)gcc -march=rv32imc -o $@ -w -Os -g -nostdlib \
+	$(RISCV_EXE_PREFIX)gcc -march=rv32imdc -o $@ -w -Os -g -nostdlib \
 		$(CUSTOM_GCC_FLAGS) \
 		-DHOST_BUILD \
 		-T x_heep_linker/link.ld \
@@ -92,7 +92,7 @@ x_heep_applications/hello_world/hello_world.elf: x_heep_applications/hello_world
 		-lc -lm -lgcc -flto -ffunction-sections -fdata-sections -specs=nano.specs
 
 x_heep_applications/hello_world/hello_world.flash_exec.elf: x_heep_applications/hello_world/hello_world.c
-	$(RISCV_EXE_PREFIX)gcc -march=rv32imc -o $@ -w -Os -g -nostdlib \
+	$(RISCV_EXE_PREFIX)gcc -march=rv32imdc -o $@ -w -Os -g -nostdlib \
 		$(CUSTOM_GCC_FLAGS) \
 		-DHOST_BUILD \
 		-T x_heep_linker/link_flash_exec.ld \
@@ -108,7 +108,7 @@ x_heep_applications/hello_world/hello_world.flash_exec.elf: x_heep_applications/
 		-lc -lm -lgcc -flto -ffunction-sections -fdata-sections -specs=nano.specs
 
 applications/cgra_func_test/main.elf: applications/cgra_func_test/main.c applications/cgra_func_test/fxp.c
-	$(RISCV_EXE_PREFIX)gcc -march=rv32imc -o $@ -w -Os -g -nostdlib \
+	$(RISCV_EXE_PREFIX)gcc -march=rv32imdc -o $@ -w -Os -g -nostdlib \
 		$(CUSTOM_GCC_FLAGS) \
 		-DHOST_BUILD \
 		-T x_heep_linker/link.ld \
@@ -123,7 +123,7 @@ applications/cgra_func_test/main.elf: applications/cgra_func_test/main.c applica
 		-lc -lm -lgcc -flto -ffunction-sections -fdata-sections -specs=nano.specs
 
 applications/cgra_dbl_search/main.elf: applications/cgra_dbl_search/main.c
-	$(RISCV_EXE_PREFIX)gcc -march=rv32imc -o $@ -w -Os -g -nostdlib \
+	$(RISCV_EXE_PREFIX)gcc -march=rv32imdc -o $@ -w -Os -g -nostdlib \
 		$(CUSTOM_GCC_FLAGS) \
 		-DHOST_BUILD \
 		-T x_heep_linker/link.ld \

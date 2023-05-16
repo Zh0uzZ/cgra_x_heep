@@ -23,5 +23,9 @@
         "/etc/localtime:/etc/localtime:ro"
     ],
     "remoteUser": "vscode",
-    "postCreateCommand": "echo \"source ${containerWorkspaceFolder}/.devcontainer/setup.sh\" >> /home/vscode/.bashrc"
+    "postCreateCommand": "echo \"source ${containerWorkspaceFolder}/.devcontainer/setup.sh\" >> /home/vscode/.bashrc",
+    "containerEnv":{
+        "HTTP_PROXY":"172.29.23.164:20173",
+        "HTTPS_PROXY":"172.29.23.164:20173"
+    }
 }

@@ -12,3 +12,7 @@ export PATH=$PATH:/opt/riscv32/bin
 
 # verible
 export PATH=$PATH:/opt/verible/bin
+
+export PATH=$PATH:/home/vscode/.local/bin
+
+# conda create -n cgra_repos python=3.8 -y && echo "conda activate cgra_repos" >> ~/.bashrc
